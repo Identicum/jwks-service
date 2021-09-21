@@ -14,4 +14,6 @@ public interface JwksService {
     Encoded encode(Decoded decoded);
 
     Decoded decode(Encoded encoded);
+
+    void delete(String id);
 }

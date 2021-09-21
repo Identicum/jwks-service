@@ -91,6 +91,13 @@ public class JwksServiceImpl implements JwksService {
         }
     }
 
+    @Override
+    public void delete(String id) {
+        if(keys.remove(id) == null){
+            throw new RuntimeException(format("kid: %s does not exist"));
+        }
+    }
+
     private String getPrivateKey(JWK jwk) {
         try {
             return format("-----BEGIN PRIVATE KEY-----\\n%s\\n-----END PRIVATE KEY-----", getEncoder().encodeToString(jwk.toRSAKey().toRSAPrivateKey().getEncoded()));
