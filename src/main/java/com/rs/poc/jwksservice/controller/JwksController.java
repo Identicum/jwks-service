@@ -8,6 +8,7 @@ import com.rs.poc.jwksservice.service.JwksService;
 import com.rs.poc.jwksservice.utils.Constants;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static com.rs.poc.jwksservice.utils.Constants.ID_PATH;
 import static org.slf4j.LoggerFactory.getLogger;
+import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -53,6 +55,7 @@ public class JwksController {
     }
 
     @DeleteMapping(ID_PATH)
+    @ResponseStatus(NO_CONTENT)
     public void delete(@PathVariable String id) {
         logger.debug("about to delete kid: {}", id);
         service.delete(id);
