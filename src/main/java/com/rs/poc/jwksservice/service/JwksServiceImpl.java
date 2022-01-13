@@ -1,12 +1,8 @@
 package com.rs.poc.jwksservice.service;
 
 
-import com.nimbusds.jose.JOSEException;
+import com.nimbusds.jose.*;
 import com.nimbusds.jose.JWSHeader.Builder;
-import com.nimbusds.jose.JWSObject;
-import com.nimbusds.jose.JWSSigner;
-import com.nimbusds.jose.JWSVerifier;
-import com.nimbusds.jose.Payload;
 import com.nimbusds.jose.jwk.JWK;
 import com.rs.poc.jwksservice.model.Decoded;
 import com.rs.poc.jwksservice.model.Encoded;
@@ -20,6 +16,7 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.nimbusds.jose.JOSEObjectType.JWT;
 import static com.nimbusds.jose.JWSAlgorithm.RS256;
 import static com.rs.poc.jwksservice.utils.JwkUtils.getSigner;
 import static java.lang.String.format;
@@ -58,7 +55,7 @@ public class JwksServiceImpl implements JwksService {
         try {
             String kid = decoded.getKid();
             JWSSigner signer = getSigner(keys, kid);
-            JWSObject jwsObject = new JWSObject(new Builder(RS256).keyID(kid).build(), new Payload(decoded.getClaims()));
+            JWSObject jwsObject = new JWSObject(new Builder(RS256).keyID(kid).type(JWT).build(), new Payload(decoded.getClaims()));
             jwsObject.sign(signer);
             Encoded response = new Encoded();
             response.setKid(kid);
