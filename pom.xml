@@ -15,7 +15,7 @@
 	<description>JWKS demo endpoint for IDP POCs</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<springbook.version>2.2.0.RELEASE</springbook.version>
+		<springbook.version>2.5.12</springbook.version>
 	</properties>
 	<dependencies>
 		<dependency>
