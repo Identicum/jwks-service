@@ -1,7 +1,11 @@
 on:
   push:
     branches:
-    - main
+      - main
+    paths:
+      - 'src/**'
+      - 'Dockerfile'
+      - 'pom.xml'
   workflow_dispatch:
 env:
   CONTAINER_IMAGE: ghcr.io/identicum/${{github.event.repository.name}}:latest
