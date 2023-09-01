@@ -26,7 +26,7 @@ docker run -p 80:8080 roundservices/jwks-service
 - Request
 ```
 GET /restv1/jwks HTTP/1.1
-Host: es-jwks-service.rstest.biz
+Host: jwks-service.identicum.com
 ```
 - Response
 ```
@@ -48,7 +48,7 @@ Host: es-jwks-service.rstest.biz
 - Request
 ```
 POST /restv1/jwks HTTP/1.1
-Host: es-jwks-service.rstest.biz
+Host: jwks-service.identicum.com
 ```
 - Response
 ```
@@ -65,7 +65,7 @@ Host: es-jwks-service.rstest.biz
     - claims: a JSONObject which will be the payload on generated JWT
 ```
 POST /restv1/jwks/encode HTTP/1.1
-Host: es-jwks-service.rstest.biz
+Host: jwks-service.identicum.com
 Content-Type: application/json
 
 {
@@ -97,7 +97,7 @@ Content-Type: application/json
     - jwt: a string who representates the jwt to be validated
 ```
 POST /restv1/jwks/decode HTTP/1.1
-Host: es-jwks-service.rstest.biz
+Host: jwks-service.identicum.com
 Content-Type: application/json
 
 {
@@ -127,7 +127,7 @@ Content-Type: application/json
     - kid-value: replace for the certificate kid that wants to remove
 ```
 DELETE /restv1/jwks/{{kid-value}}
-Host: es-jwks-service.rstest.biz
+Host: jwks-service.identicum.com
 ```
 - Response: `HTTP 204 no-content`
 			
