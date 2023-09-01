@@ -25,6 +25,7 @@ jobs:
     - uses: github/codeql-action/autobuild@v2
     - uses: github/codeql-action/analyze@v2
   build-push:
+    needs: analyze
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
