@@ -16,7 +16,7 @@ mvn spring-boot:run
 - prerequisites:
     - Docker 19.03+
 ```
-docker run -p 80:8080 roundservices/jwks-service
+docker run -p 80:8080 ghcr.io/identicum/jwks-service:latest
 ```
 
 ### Operations
