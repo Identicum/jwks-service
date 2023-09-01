@@ -1,4 +1,4 @@
-package com.rs.poc.jwksservice.utils;
+package com.identicum.jwksservice.utils;
 
 public enum Action {
     ENCODE,

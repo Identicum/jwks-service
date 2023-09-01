@@ -1,4 +1,4 @@
-package com.rs.poc.jwksservice.model;
+package com.identicum.jwksservice.model;
 
 import lombok.Getter;
 import lombok.Setter;

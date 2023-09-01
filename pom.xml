@@ -8,13 +8,13 @@
 		<version>2.4.4</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.rs.poc</groupId>
+	<groupId>com.identicum</groupId>
 	<artifactId>jwks-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>jwks</name>
 	<description>JWKS demo endpoint for IDP POCs</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<springboot.version>2.7.3</springboot.version>
 	</properties>
 	<dependencies>

@@ -1,4 +1,4 @@
-package com.rs.poc.jwks;
+package com.identicum.jwks;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringBootConfiguration;

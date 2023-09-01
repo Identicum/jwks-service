@@ -1,4 +1,4 @@
-package com.rs.poc.jwksservice.utils;
+package com.identicum.jwksservice.utils;
 
 import com.nimbusds.jose.Algorithm;
 import com.nimbusds.jose.JOSEException;

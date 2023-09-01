@@ -1,4 +1,4 @@
-package com.rs.poc.jwksservice;
+package com.identicum.jwksservice;
 
 import org.slf4j.Logger;
 import org.springframework.boot.SpringApplication;

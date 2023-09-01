@@ -1,14 +1,15 @@
-package com.rs.poc.jwksservice.service;
+package com.identicum.jwksservice.service;
 
 
+import com.identicum.jwksservice.model.Decoded;
+import com.identicum.jwksservice.model.Encoded;
+import com.identicum.jwksservice.model.Keys;
+import com.identicum.jwksservice.model.PrivateKey;
+import com.identicum.jwksservice.utils.JwkUtils;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.JWSHeader.Builder;
 import com.nimbusds.jose.jwk.JWK;
-import com.rs.poc.jwksservice.model.Decoded;
-import com.rs.poc.jwksservice.model.Encoded;
-import com.rs.poc.jwksservice.model.Keys;
-import com.rs.poc.jwksservice.model.PrivateKey;
-import com.rs.poc.jwksservice.utils.JwkUtils;
+
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +17,9 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.identicum.jwksservice.utils.JwkUtils.getSigner;
 import static com.nimbusds.jose.JOSEObjectType.JWT;
 import static com.nimbusds.jose.JWSAlgorithm.RS256;
-import static com.rs.poc.jwksservice.utils.JwkUtils.getSigner;
 import static java.lang.String.format;
 import static java.util.Base64.getEncoder;
 import static java.util.UUID.randomUUID;
