@@ -3,15 +3,6 @@
 
 ### Run
 
-#### cmd
-- prerequisites:
-    - maven 3.6.x +
-    - JDK 1.8 +
-
-```
-mvn spring-boot:run
-```
-
 #### Docker
 - prerequisites:
     - Docker 19.03+
