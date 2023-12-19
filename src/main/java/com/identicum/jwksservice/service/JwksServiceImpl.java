@@ -9,10 +9,10 @@ import com.identicum.jwksservice.utils.JwkUtils;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.JWSHeader.Builder;
 import com.nimbusds.jose.jwk.JWK;
-
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
+import java.security.KeyPair;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +37,14 @@ public class JwksServiceImpl implements JwksService {
         Keys jwks = new Keys();
         jwks.setKeys(keys.values().stream().map(jwt -> jwt.toPublicJWK().toJSONObject()).collect(toList()));
         return jwks;
+    }
+
+    public KeyPair getKeyPairByKid(String kid){
+        try {
+            return keys.get(kid).toRSAKey().toKeyPair();
+        } catch (JOSEException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

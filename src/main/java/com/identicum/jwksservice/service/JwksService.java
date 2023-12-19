@@ -5,9 +5,13 @@ import com.identicum.jwksservice.model.Encoded;
 import com.identicum.jwksservice.model.Keys;
 import com.identicum.jwksservice.model.PrivateKey;
 
+import java.security.KeyPair;
+
 public interface JwksService {
 
     Keys getKeys();
+
+    KeyPair getKeyPairByKid(String kid);
 
     PrivateKey generateKey();
 
